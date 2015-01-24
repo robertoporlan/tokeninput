@@ -1,7 +1,5 @@
-/*
- * Copyright (c) 2015 Paulo Leal
- * Licensed under the GPL license.
- */
+/*! tokeninput - v0.1.0 - 2015-01-24
+* Copyright (c) 2015 Paulo Leal; Licensed GPL */
 (function ($) {
   $.tokeninput = {
     defaultOptions: {}
@@ -59,10 +57,10 @@
       };
 
       var addEntry = function (inputName, displayName, value) {
-        var closeButton = $("<a></a>", {class: DELETE_FIELD_CLASS, href: 'javascript:void(0)'}).html('X');
+        var closeButton = $("<a></a>", {class: DELETE_FIELD_CLASS, href: ''}).html('X');
         closeButton.on('click', removeEntry);
 
-        var inputObject = $("<input/>", {name: inputName, type: 'hidden', value: value});
+        var inputObject = $("<input/>", {name: name, type: 'hidden', value: value});
         var li = $("<li></li>").html(displayName).append(closeButton);
 
         block.find("." + HIDDEN_FIELDS_CLASS).append(inputObject);
