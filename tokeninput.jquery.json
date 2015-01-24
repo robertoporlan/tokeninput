@@ -1,0 +1,28 @@
+{
+  "name": "tokeninput",
+  "title": "tokeninput",
+  "description": "Tokeninput plugin",
+  "version": "0.1.0",
+  "homepage": "https://github.com/PauloLeal/tokeninput",
+  "author": {
+    "name": "Paulo Leal",
+    "url": "https://github.com/PauloLeal"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PauloLeal/tokeninput"
+  },
+  "bugs": "",
+  "licenses": [
+    {
+      "type": "GPL",
+      "url": "http://opensource.org/licenses/GPL"
+    }
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3"
+  },
+  "keywords": [
+    "jquery-plugin"
+  ]
+}
