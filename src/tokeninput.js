@@ -46,6 +46,7 @@
       var prev = obj.prev();
       obj.remove();
       block.insertAfter(prev);
+      var searchDelayTimer = null;
 
       var findByValue = function (value) {
         var _ret = false;
@@ -81,19 +82,29 @@
       var updateOptionsList = function () {
         var source = [];
 
-        var search = block.find("." + INPUT_FIELD_CLASS).val();
-
-        if (typeof(options.source) === "function") {
-          source = options.source(search);
-        } else if (typeof(options.source) === "object") {
-          source = _$.grep(options.source, function (it) {
-            return it.indexOf(search) >= 0
-          });
-        } else { //Ver caso de promise
-
+        if (searchDelayTimer) {
+          searchDelayTimer = clearTimeout(searchDelayTimer);
         }
 
-        console.log(source);
+        searchDelayTimer = setTimeout(function () {
+          var search = block.find("." + INPUT_FIELD_CLASS).val();
+          if (typeof(options.source) === "function") {
+            source = options.source(search);
+            _updateOptionsList(source);
+          } else if (typeof(options.source) === "object") {
+            source = _$.grep(options.source, function (it) {
+              return it.toLowerCase().indexOf(search.toLowerCase()) >= 0
+            });
+            _updateOptionsList(source);
+          } else { //Ver caso de promise
+
+          }
+          console.log(source);
+        }, 200);
+      };
+
+      var _updateOptionsList = function(source) {
+
       };
 
       var showListIfSource = function () {
