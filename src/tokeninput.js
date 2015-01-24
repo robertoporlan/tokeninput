@@ -28,7 +28,11 @@
       var block = createDiv({class: CLASS_PREFIX + " " + options.class});
       block.append(createDiv({class: HIDDEN_FIELDS_CLASS}).hide());
       block.append(createUl({class: VISIBLE_LABELS_CLASS}));
-      block.append(obj.clone().removeAttr('name').addClass(INPUT_FIELD_CLASS));
+      var newInput = obj.clone().removeAttr('name').addClass(INPUT_FIELD_CLASS);
+      if (options.placeholder) {
+        newInput.attr('placeholder', options.placeholder);
+      }
+      block.append(newInput);
       return block;
     };
 
