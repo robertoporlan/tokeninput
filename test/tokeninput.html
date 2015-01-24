@@ -20,7 +20,10 @@
       _$(".tokeninput").tokeninput({
         class: 'testClass',
         placeholder: 'type here',
-        source: ['AAA', 'BBB', 'ACCC', 'DDD', 'EEAE', 'FFF', 'GGG', 'HHH']
+        source: function(search) {
+          return _$.ajax('remoteSource.json');
+        }
+//        source: ['AAA', 'BBB', 'ACCC', 'DDD', 'EEAE', 'FFF', 'GGG', 'HHH']
       });
     });
   </script>

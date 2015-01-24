@@ -4,7 +4,8 @@
  */
 (function ($) {
   $.tokeninput = {
-    defaultOptions: {}
+    defaultOptions: {
+    }
   };
 
   $.fn.tokeninput = function (options) {
@@ -89,22 +90,24 @@
         searchDelayTimer = setTimeout(function () {
           var search = block.find("." + INPUT_FIELD_CLASS).val();
           if (typeof(options.source) === "function") {
-            source = options.source(search);
-            _updateOptionsList(source);
+              source = options.source(search);
+              $.when(source).done(function (result) {
+                _updateOptionsList(result);
+              });
           } else if (typeof(options.source) === "object") {
             source = _$.grep(options.source, function (it) {
               return it.toLowerCase().indexOf(search.toLowerCase()) >= 0
             });
             _updateOptionsList(source);
-          } else { //Ver caso de promise
-
+          } else {
+            console.error("unrecognized source");
           }
           console.log(source);
         }, 200);
       };
 
-      var _updateOptionsList = function(source) {
-
+      var _updateOptionsList = function (source) {
+        console.log(source);
       };
 
       var showListIfSource = function () {
