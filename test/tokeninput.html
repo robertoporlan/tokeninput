@@ -20,10 +20,36 @@
       _$(".tokeninput").tokeninput({
         class: 'testClass',
         placeholder: 'type here',
-        source: function(search) {
-          return _$.ajax('remoteSource.json');
-        }
-//        source: ['AAA', 'BBB', 'ACCC', 'DDD', 'EEAE', 'FFF', 'GGG', 'HHH']
+//        source: function(search) {
+//          return _$.ajax('remoteSource.json');
+//        }
+        source: [
+          {
+            displayName: "aalorem",
+            listingName: "aalorem",
+            value: 1
+          },
+          {
+            displayName: "aaipsum",
+            listingName: "aaipsum",
+            value: 2
+          },
+          {
+            displayName: "aadolor",
+            listingName: "aadolor",
+            value: 3
+          },
+          {
+            displayName: "aasit",
+            listingName: "aasit",
+            value: 4
+          },
+          {
+            displayName: "aaamet",
+            listingName: "aaamet",
+            value: 5
+          },
+        ],
       });
     });
   </script>

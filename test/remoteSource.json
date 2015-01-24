@@ -1,1 +1,27 @@
-["aalorem", "aaipsum", "aadolor", "aasit", "aaamet"]
+[
+  {
+    displayName: "aalorem",
+    listingName: "aalorem",
+    value: 1
+  },
+  {
+    displayName: "aaipsum",
+    listingName: "aaipsum",
+    value: 2
+  },
+  {
+    displayName: "aadolor",
+    listingName: "aadolor",
+    value: 3
+  },
+  {
+    displayName: "aasit",
+    listingName: "aasit",
+    value: 4
+  },
+  {
+    displayName: "aaamet",
+    listingName: "aaamet",
+    value: 5
+  },
+]
