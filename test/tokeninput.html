@@ -1,27 +1,63 @@
 <!doctype html>
-  <html>
-  <head>
-    <meta charset="utf-8">
-    <title>tokeninput Test Suite</title>
-    <!-- Load local jQuery. -->
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <!-- Load local QUnit. -->
-    <link rel="stylesheet" href="../bower_components/qunit/qunit/qunit.css" media="screen">
-    <script src="../bower_components/qunit/qunit/qunit.js"></script>
-    <!-- Load local lib and tests. -->
-    <script src="../src/tokeninput.js"></script>
-    <script src="tokeninput_test.js"></script>
-    <!-- Removing access to jQuery and $. But it'll still be available as _$, if
-         you REALLY want to mess around with jQuery in the console. REMEMBER WE
-         ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
-    <script>window._$ = jQuery.noConflict(true);</script>
-  </head>
-  <body>
-    <div id="qunit"></div>
-    <div id="qunit-fixture">
-      <span>lame test markup</span>
-      <span>normal test markup</span>
-      <span>awesome test markup</span>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>tokeninput Test Suite</title>
+  <!-- Load local jQuery. -->
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <!-- Load local QUnit. -->
+  <link rel="stylesheet" href="../bower_components/qunit/qunit/qunit.css" media="screen">
+  <script src="../bower_components/qunit/qunit/qunit.js"></script>
+  <!-- Load local lib and tests. -->
+  <script src="../src/tokeninput.js"></script>
+  <script src="tokeninput_test.js"></script>
+  <!-- Removing access to jQuery and $. But it'll still be available as _$, if
+       you REALLY want to mess around with jQuery in the console. REMEMBER WE
+       ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
+  <script>
+    window._$ = jQuery.noConflict(true);
+    _$(function () {
+      _$(".tokeninput").tokeninput({
+        class: 'testClass'
+      });
+    });
+  </script>
+  <style>
+    .testClass {
+      background-color: lightskyblue;
+    }
+  </style>
+</head>
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture">
+  <span>lame test markup</span>
+  <span>normal test markup</span>
+  <span>awesome test markup</span>
+</div>
+
+
+<form onsubmit="return false;">
+  <fieldset>
+    <div>
+      <span class="label">Label:</span>
+      <input type="text" value="dummy-field 1"/>
     </div>
-  </body>
+
+    <div>
+      <span class="label">Label:</span>
+      <input type="text" class="tokeninput" name="tkfield"/>
+    </div>
+
+    <div>
+      <span class="label">Label:</span>
+      <input type="text" value="dummy-field 2"/>
+    </div>
+
+  </fieldset>
+
+  <input type="submit" value="go"/>
+</form>
+
+</body>
 </html>
