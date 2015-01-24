@@ -19,7 +19,8 @@
     _$(function () {
       _$(".tokeninput").tokeninput({
         class: 'testClass',
-        placeholder: 'type here'
+        placeholder: 'type here',
+        source: ['AAA', 'BBB', 'ACCC', 'DDD', 'EEAE', 'FFF', 'GGG', 'HHH']
       });
     });
   </script>
@@ -41,17 +42,17 @@
 <form onsubmit="return false;">
   <fieldset>
     <div>
-      <span class="label">Label:</span>
+      <span class="label">Label: DUMMY-AAA</span>
       <input type="text" value="dummy-field 1"/>
     </div>
 
     <div>
-      <span class="label">Label:</span>
+      <span class="label">Label: field</span>
       <input type="text" class="tokeninput" name="tkfield"/>
     </div>
 
     <div>
-      <span class="label">Label:</span>
+      <span class="label">Label: DUMMY-BBB</span>
       <input type="text" value="dummy-field 2"/>
     </div>
 
