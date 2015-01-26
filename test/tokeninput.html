@@ -20,6 +20,7 @@
       _$(".tokeninput").tokeninput({
         class: 'testClass',
         placeholder: 'type here',
+        fromListOnly: true,
 //        source: function(search) {
 //          return _$.ajax('remoteSource.json');
 //        }
@@ -56,6 +57,10 @@
   <style>
     .testClass {
       background-color: lightskyblue;
+    }
+
+    .tokeninput-navigation-selection {
+      background-color: red;
     }
   </style>
 </head>
