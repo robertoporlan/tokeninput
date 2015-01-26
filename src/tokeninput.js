@@ -231,7 +231,7 @@
               if (options.fromListOnly) {
                 if (currentSource) {
                   currentSource.forEach(function (it) {
-                    if (it.displayName === displayName) {
+                    if (it.listingName === displayName) {
                       addEntry(inputName, displayName, value);
                       target.val('');
                     }
